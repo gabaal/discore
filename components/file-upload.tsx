@@ -1,8 +1,8 @@
 "use client";
 // dont uncomment this one
-// import "@uploadthing/react/styles.css";
+import "@uploadthing/react/styles.css";
 
-// import { UploadDropzone } from "@/lib/uploadthing";
+import { UploadDropzone } from "@/lib/uploadthing";
 import { X } from "lucide-react";
 import Image from "next/image";
 import React from "react";
@@ -35,16 +35,15 @@ const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
     );
   }
   return (
-    <div>test</div>
-    // <UploadDropzone
-    //   endpoint={endpoint}
-    //   onClientUploadComplete={(res) => {
-    //     onChange(res?.[0].url);
-    //   }}
-    //   onUploadError={(error: Error) => {
-    //     console.log(error);
-    //   }}
-    // />
+    <UploadDropzone
+      endpoint={endpoint}
+      onClientUploadComplete={(res) => {
+        onChange(res?.[0].url);
+      }}
+      onUploadError={(error: Error) => {
+        console.log(error);
+      }}
+    />
   );
 };
 
